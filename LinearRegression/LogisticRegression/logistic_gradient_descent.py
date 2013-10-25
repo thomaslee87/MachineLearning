@@ -20,13 +20,17 @@ filey.close()
 print dataset_x
 print dataset_y
 
+m = len(dataset_y)
+
 theta0 = np.mat([1,0,0])
 theta = np.mat([0, 0, 0])
 alpha = 0.01
-epsilon = 0.00000001
+epsilon = 0.000000001
 while True:
+    s = 0
     for i in range(len(dataset_y)):
-        theta = theta + alpha * (dataset_y[i] - 1.0 / (1 + math.exp(-1 * np.inner(dataset_x[i], theta)))) * np.mat(dataset_x[i])
+        s += (dataset_y[i] - 1.0 / (1 + math.exp(-1 * np.inner(dataset_x[i], theta)))) * np.mat(dataset_x[i])
+    theta = theta + alpha * s
     if np.inner(theta - theta0, theta - theta0) < epsilon:
         break
     else:
