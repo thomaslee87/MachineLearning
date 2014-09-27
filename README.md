@@ -1,4 +1,9 @@
-thomaslee's path of Machine Learning
+# thomaslee's path of Machine Learning
 
+---
 
-Codes are maily written by Python or Octave.
+    Codes are maily written by Python or Octave.
+
+## SPIKE
+
+    We are learning data mining here for interest.
